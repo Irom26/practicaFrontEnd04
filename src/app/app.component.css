@@ -1,0 +1,16 @@
+nav{
+    display: block;
+    float: left;
+    height: 120px;
+}
+
+span{
+        float: none;
+    text-align: center;
+    color: white;
+
+}
+
+.router{
+    margin-top: 140px;
+}

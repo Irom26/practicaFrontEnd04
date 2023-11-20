@@ -1,0 +1,47 @@
+
+  
+  
+<div class="container">
+    <div class="col" style="text-align: center;"><h1>Datos de Alumno</h1></div>
+    <br><br>
+    <form >
+        <div class="form.group">
+            <label for="id">Id: </label>
+            <input type="text" class="form.control" id="id" required
+             [(ngModel)]="cuadroId" name ="id">            
+            <br>
+            <label for="nombre">Nombres: </label>
+            <input type="text" class="form.control" id="nombre" required
+            [(ngModel)]="cuadroNombres" name ="nombre">
+            <br>
+            <label for="apellido">Apellidos: </label>
+            <input type="text" class="form.control" id="apellido" required
+            [(ngModel)]="cuadroApellidos" name ="apellido">
+            <br>
+            <label for="fechaNacimiento">Fecha de nacimiento: </label>
+            <input type="text" class="form.control" id="fechaNacimiento" required
+            [(ngModel)]="cuadroFechaNacimiento" name ="fechaNacimiento">
+            <br>
+            <label for="direccion">Direccion: </label>
+            <input type="text" class="form.control" id="direccion" required
+            [(ngModel)]="cuadroDireccion" name ="direccion">
+            <br>
+            <label for="correo">Correo: </label>
+            <input type="text" class="form.control" id="correo" required
+            [(ngModel)]="cuadroCorreo" name ="correo">
+            <br>
+            <label for="telefono">Telefono: </label>
+            <input type="text" class="form.control" id="telefono" required
+            [(ngModel)]="cuadroTelefono" name ="telefono">
+            <br>
+            
+        </div>
+        <button type="submit" class="btn btn-primary"
+         (click)="agregarAlumno()">Agregar</button>
+    </form>
+    <br><br>
+
+</div>
+<div style="text-align: center;"><h1>Lista de Alumno</h1></div>
+    
+<app-alumno-hijo *ngFor="let alumno of alumnos; let i=index" [alumnoLista]="alumno" [indice]="i"></app-alumno-hijo>

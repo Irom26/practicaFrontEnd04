@@ -1,0 +1,54 @@
+<h1>Datos de curso</h1>
+<div [hidden]="enviado">
+    <form (ngSubmit)="onSubmit()" #cursoForm="ngForm">
+        <div class="form.group">
+            <label for="id">Id: </label>
+            <input type="text" class="form.control" id="id" required
+             [(ngModel)]="modelo.id" name ="id">
+            
+            <br>
+            <label for="nombre">Nombre: </label>
+            <input type="text" class="form.control" id="nombre" required
+            [(ngModel)]="modelo.nombre" name ="nombre">
+            <br>
+            <label for="hora">Horas: </label>
+            <select id="hora" class="form-control" required
+            [(ngModel)]="modelo.horas" name = "hora">
+                <option *ngFor="let hora of horas" [value]="hora">
+                    {{hora}}
+                </option>
+            </select>
+            <br>
+            <label for="credito">Creditos: </label>
+            <select id="credito" class="form-control" required
+            [(ngModel)]="modelo.creditos" name = "credito">
+                <option *ngFor="let credito of creditos" [value]="credito">
+                    {{credito}}
+                </option>
+            </select>
+            <br>
+            <label for="categoria">Categoria: </label>
+            <select id="categoria" class="form-control" required
+            [(ngModel)]="modelo.categoria" name = "categoria">
+                <option *ngFor="let categoria of categorias" [value]="categoria">
+                    {{categoria}}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary"
+         [disabled]="!cursoForm.form.valid">Enviar</button>
+    </form>
+
+
+</div>
+
+<div [hidden]="!enviado">
+    <h2>Formulario enviado</h2>
+    <div>Id: {{modelo.id}}</div>
+    <div>Nombre: {{modelo.nombre}}</div>
+    <div>Horas: {{modelo.horas}}</div>    
+    <div>Creditos: {{modelo.creditos}}</div> 
+    <div>Categorias: {{modelo.categoria}}</div> 
+    <button class="btn btn-primary" (click)="enviado=false">Editar</button>
+
+</div>
